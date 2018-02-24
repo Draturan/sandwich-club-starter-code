@@ -2,4 +2,8 @@
 <resources>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Layout Description -->
+    <dimen name="padding_text_title">10dp</dimen>
+    <dimen name="padding_text">10dp</dimen>
 </resources>
