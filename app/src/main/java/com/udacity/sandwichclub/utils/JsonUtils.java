@@ -20,23 +20,23 @@ public class JsonUtils {
 
         //Creating and setting up all the data inside the Sandwich object
         Sandwich sandwich = new Sandwich();
-        sandwich.setMainName(name.getString("mainName"));
+        sandwich.setMainName(name.optString("mainName"));
 
         // Parsing List nameAlsoKnownAs
         List<String> nameAlsoKnownAs = new ArrayList<>();
-        JSONArray alsoKnownArray = name.getJSONArray("alsoKnownAs");
+        JSONArray alsoKnownArray = name.optJSONArray("alsoKnownAs");
         for (int i = 0; i < alsoKnownArray.length();i++){
             nameAlsoKnownAs.add((String) alsoKnownArray.get(i));
         }
         sandwich.setAlsoKnownAs(nameAlsoKnownAs);
 
-        sandwich.setPlaceOfOrigin(jsonSandwich.getString("placeOfOrigin"));
-        sandwich.setDescription(jsonSandwich.getString("description"));
-        sandwich.setImage(jsonSandwich.getString("image"));
+        sandwich.setPlaceOfOrigin(jsonSandwich.optString("placeOfOrigin"));
+        sandwich.setDescription(jsonSandwich.optString("description"));
+        sandwich.setImage(jsonSandwich.optString("image"));
 
         // Parsing List ingredients
         List<String> ingredients = new ArrayList<>();
-        JSONArray ingredientsArray = jsonSandwich.getJSONArray("ingredients");
+        JSONArray ingredientsArray = jsonSandwich.optJSONArray("ingredients");
         for (int i=0; i<ingredientsArray.length();i++){
             ingredients.add((String) ingredientsArray.get(i));
         }
